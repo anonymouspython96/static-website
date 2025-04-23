@@ -3,3 +3,13 @@
     margin: 0;
     padding: 0;
 }
+nav{
+    justify-content: space-around;
+    padding: 2rem 0;
+}
+nav > ul > li {
+    list-style: none;
+}
+nav > ul > li > a {
+    padding: 0 0.5rem;
+}
