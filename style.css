@@ -23,3 +23,23 @@ h2,
 header > a {
     margin: 2rem 0;
 }
+main > .who-i-am {
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 7.5rem;
+}
+main > article > p {
+    text-align: justify;
+}
+main > article > h3,
+main > article > p {
+    margin: 2rem 0;
+}
+/* Here I had a problem: 
+    but I solve it searching online and I understand that bg needs to parse specific values url(...) - bg-repeat - bg-position/bg-size
+*/
+.img {
+    min-height: 260px;
+    background: url("./img/temp-pic-1.jpg") no-repeat center/cover; 
+}
+
