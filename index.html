@@ -3,50 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Website</title>
+    <meta name="description" content="Cucito: Servizio di cucito per piccole riparazioni sartoriali rapide e di qualità.">
+    <meta name="keywords" content="cucito, riparazioni sartoriali, sarta, Nicoletta Timofei">
+    <title>Cucito - Piccole Riparazioni Sartoriali</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <nav class="flex">
+    <nav class="flex" aria-label="Main navigation">
         <h3>Cucito</h3>
         <ul class="flex">
-            <li><a href="#">Chi sono</a></li>
-            <li><a href="#">Servizi</a></li>
-            <li><a href="#">Contatti</a></li>
+            <li><a href="#chi-sono">Chi sono</a></li>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#contatti">Contatti</a></li>
         </ul>
     </nav>
-    <header class="flex">
+    <header class="flex" style="background-image: url('./img/hero.jpg');">
         <h1>Piccole riparazioni</h1>
         <h2>Servizio di cucito</h2>
-        <a href="#">Scopri di più</a>
+        <a href="#servizi" class="btn">Scopri di più</a>
     </header>
     <main>
-        <article class="flex who-i-am">
-            <h3>
-                Timofei Nicoletta
-            </h3>
+        <section id="chi-sono" class="who-i-am flex">
+            <h3>Timofei Nicoletta</h3>
             <p>
-                Ciao! Sono Nicoletta, la sarta di quartiere pronta a ridare vita ai tuoi capi più amati. Strappi improvvisi, cuciture scucite o zip ribelli non fanno paura: qui trasformo piccoli disastri in perfette occasioni per brillare ancora.
-                    <br>
-                Con oltre dieci anni di ago e filo alle spalle, offro riparazioni veloci e durature—dagli orli spaiati ai bottoni dispettosi—senza fronzoli né prezzi esorbitanti. Credo che ogni abito meriti una seconda chance, e a te basta consegnarmelo per rivederlo come nuovo.
-                    <br>
+                Ciao! Sono Nicoletta, la sarta di quartiere pronta a ridare vita ai tuoi capi più amati. Strappi improvvisi, cuciture scucite o zip ribelli non fanno paura: qui trasformo piccoli disastri in perfette occasioni per brillare ancora.<br>
+                Con oltre dieci anni di ago e filo alle spalle, offro riparazioni veloci e durature—dagli orli spaiati ai bottoni dispettosi—senza fronzoli né prezzi esorbitanti. Credo che ogni abito meriti una seconda chance, e a te basta consegnarmelo per rivederlo come nuovo.<br>
                 Se cerchi precisione, velocità e quel tocco artigianale che fa la differenza, sei nel posto giusto. Non buttare via il tuo capo preferito: da me troverai sempre un alleato pronto a cucire, rattoppare e valorizzare il tuo stile. Benvenuto nel mio laboratorio!
-        </article>
-        <article class="img">
-        </article>
-        <article>
-            Prezzi
-        </article>
-        <article>
-            Call to action
-        </article>
+            </p>
+            <a href="#contatti" class="btn">Salva il mio outfit</a>
+        </section>
+        <figure class="img" style="background-image: url('./img/temp-pic-1.jpg');" aria-label="Immagine di un lavoro sartoriale"></figure>
+        <section id="servizi" class="prices grid">
+            <article>
+                <h4>Pacchetto “Rattoppo Espresso” – €25</h4>
+                <ul>
+                    <li><i class="fas fa-check"></i> Riparazioni semplici (bottoni, orli, piccole cuciture)</li>
+                    <li><i class="fas fa-check"></i> Consegna in 48 ore</li>
+                    <li><i class="fas fa-check"></i> Controllo qualità “occhio di falco” incluso</li>
+                    <li><i class="fas fa-check"></i> Ideale per salvare quei capi che proprio non puoi buttare</li>
+                </ul>
+            </article>
+            <article>
+                <h4>Pacchetto “Rinnovo da Pro” – €50</h4>
+                <ul>
+                    <li><i class="fas fa-check"></i> Tutto ciò che include il “Rattoppo Espresso”</li>
+                    <li><i class="fas fa-check"></i> Sostituzione di cerniere e finiture di pregio</li>
+                    <li><i class="fas fa-check"></i> Rifiniture sartoriali su misura (ad es. stringere/vestire)</li>
+                    <li><i class="fas fa-check"></i> Consegna in 72 ore + stretto contatto WhatsApp per aggiornamenti</li>
+                </ul>
+            </article>
+        </section>
+        <figure class="img" style="background-image: url('./img/temp-pic-2.jpg');" aria-label="Immagine di un capo riparato"></figure>
+        <section class="call-to-action flex">
+            <h5>Non lasciare che un bottone ribelle rovini il tuo outfit: prenota il tuo Rattoppo Express!</h5>
+        </section>
     </main>
-    <footer>
-        <ul>
-            <li>Copyw</li>
-            <li>Pr</li>
-            <li>Rest</li>
+    <footer id="contatti" class="flex">
+        <article class="flex">
+            <h6>Hai bisogno di aiuto o vuoi richiedere un preventivo rapido?</h6>
+            <a href="https://wa.me/+393271450340?text=Ciao%20Nicoletta,%20vorrei%20un%20preventivo%20per%20una%20riparazione!" 
+               class="whatsapp-btn btn" 
+               aria-label="Contattami su WhatsApp" 
+               role="button">
+                <i class="fab fa-whatsapp"></i> Scrivimi su WhatsApp
+            </a>
+        </article>
+        <ul class="flex social-links">
+            <li><a href="#" aria-label="Seguimi su Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" aria-label="Seguimi su Facebook"><i class="fab fa-facebook"></i></a></li>
+        </ul>
+        <ul class="flex">
+            <li>© 2023 Timofei Nicoletta - Tutti i diritti riservati.</li>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-and-conditions.html">Termini e Condizioni</a></li>
         </ul>
     </footer>
 </body>
