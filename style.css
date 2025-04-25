@@ -1,4 +1,16 @@
+/* 
+    --------------------
+    IMPORT FONT FAMILY
+    --------------------
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+/* 
+    ------
+    RESET
+    ------
+*/
 
 * {
     box-sizing: border-box;
@@ -6,22 +18,33 @@
     padding: 0;
 }
 
+/* 
+    --------------
+    ROOT of COLORS
+    --------------
+*/
+
 :root {
     --color-blue: #001bdb;
     --color-violet: #5b00db;
     --color-green: #57db00;
     --color-yellow: #dbd500;
+    --color-orange: #dba500;
     --color-simil-blue: #2e345c;
     --color-white: #fffffb;
-    --text-color: var(--color-green);
-    --bg-color: var(--color-simil-blue);
 }
+
+/* 
+    -----
+    BODY
+    -----
+*/
 
 body {
     font-family: 'Aboreto', system-ui, sans-serif;
     font-weight: 400;
     line-height: 1.6;
-    color: var(--text-color);
+    color: var(--color-green);
     background-color: var(--color-white);
 }
 
@@ -40,7 +63,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background-color: var(--bg-color);
+    background-color: var(--color-simil-blue);
 }
 
 nav h3 {
@@ -55,7 +78,7 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--color-green);
     font-size: 1.1rem;
     transition: color 0.3s ease;
 }
@@ -65,7 +88,7 @@ nav ul li a:hover {
 }
 
 header {
-    min-height: 80vh;
+    min-height: 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -87,24 +110,25 @@ header h2 {
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    border: 2px solid var(--text-color);
+    margin: 2rem 0 2.5rem;
+    border: 2px solid var(--color-green);
     border-radius: 0.5rem;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--color-green);
     background-color: transparent;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    background-color: var(--color-green);
+    color: var(--color-simil-blue);
 }
 
 .who-i-am {
     flex-direction: column;
     align-items: center;
-    padding: 3rem 5%;
-    background-color: var(--bg-color);
+    padding: 3rem 5% 0;
+    background-color: var(--color-simil-blue);
     text-align: center;
 }
 
@@ -120,27 +144,91 @@ header h2 {
     text-align: justify;
 }
 
-.img {
+.who-i-am img {
+    width: 160px;
+    height: 100%;
+    border-radius: 50%;
+    padding: 1rem 0 1.5rem;
+}
+
+/* Contenitore principale */
+.carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Track flessibile con animazione variabile */
+.carousel__track {
+    display: flex;
+    gap: 2rem;
+    width: 40%;
+    /* Configurazione comune */
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.carousel__track figure {
+    border-radius: 2rem;
+}
+
+/* Direzioni distinte via attributo data-direction */
+.carousel[data-direction="left"] .carousel__track {
+    animation-name: scroll-left;
+}
+
+.carousel[data-direction="right"] .carousel__track {
+    animation-name: scroll-right;
+}
+
+/* Slides: dimensioni e sfondo */
+.carousel__slide {
+    flex: 0 0 100%;
     min-height: 300px;
     background: no-repeat center/cover;
-    width: 100%;
+}
+
+/* Keyframes per scroll a sinistra */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Keyframes per scroll a destra */
+@keyframes scroll-right {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
 
 .prices {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     padding: 3rem 5%;
-    background-color: var(--bg-color);
+    background-color: var(--color-simil-blue);
+    text-align: left;
 }
 
 .prices article {
     padding: 1.5rem;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--color-green);
     border-radius: 0.5rem;
 }
 
 .prices h4 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+}
+
+.prices h4 span {
+    color: var(--color-orange);
 }
 
 .prices ul {
@@ -153,7 +241,7 @@ header h2 {
 }
 
 .prices ul li i {
-    color: var(--text-color);
+    color: var(--color-green);
     margin-right: 0.5rem;
 }
 
@@ -161,7 +249,7 @@ header h2 {
     flex-direction: column;
     align-items: center;
     padding: 3% 5%;
-    background-color: var(--bg-color);
+    background-color: var(--color-simil-blue);
     text-align: center;
 }
 
@@ -174,14 +262,13 @@ footer {
     flex-direction: column;
     align-items: center;
     padding: 0 5% 2rem 5%;
-    background-color: var(--bg-color);
+    background-color: var(--color-simil-blue);
     color: var(--color-white);
 }
 
 footer article {
     flex-direction: column;
     text-align: center;
-    margin-bottom: 1rem;
 }
 
 footer ul {
@@ -195,7 +282,7 @@ footer ul.social-links {
 }
 
 footer ul li a {
-    color: var(--text-color);
+    color: var(--color-green);
     text-decoration: none;
     transition: color 0.3s ease;
 }
